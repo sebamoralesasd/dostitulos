@@ -64,8 +64,8 @@ end
 # Toma un feed y un tópico y modifica al título
 # obtenido del feed con dicho tópico.
 def replace(params)
-  title = params[:pais].title
-  old_categories = categories_on_title(params[:pais])
+  title = params[:feed].title
+  old_categories = categories_on_title(params[:feed])
   puts old_categories
   cat = old_categories[Random.new.rand(0..old_categories.count - 1)]
   topic = params[:topic]
@@ -87,12 +87,12 @@ def titles_with_categories(feed)
 end
 
 def main
-  topics = Topics.new('https://trends.google.es/trends/trendingsearches/daily/rss?geo=AR')
+  topics = Topics.new('https://trends.google.com.ar/trends/trendingsearches/daily/rss?geo=AR')
   elpais = Feed.new('https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/america/portada')
 
   valid_pairs = ValidPairs.new(titles_with_categories(elpais))
 
-  puts replace(pais: valid_pairs.get,
+  puts replace(feed: valid_pairs.get,
                topic: topics.get)
 end
 
