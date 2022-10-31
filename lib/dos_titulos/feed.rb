@@ -9,6 +9,9 @@ module DosTitulos
       fetch_elpais(url)
     end
 
+    # Obtener noticias del portal elpais.com
+    #
+    # @param url [String]
     def fetch_elpais(url)
       @pairs = []
       URI.parse(url).open do |rss|

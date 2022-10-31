@@ -7,6 +7,9 @@ module DosTitulos
       fetch_topics(url)
     end
 
+    # Obtener tópicos a partir de una noticia.
+    #
+    # @param url [String]
     def fetch_topics(url)
       @pairs = []
       URI.parse(url).open do |rss|
@@ -18,6 +21,7 @@ module DosTitulos
       end
     end
 
+    # Obtener un tópico aleatorio.
     def get
       @pairs[Random.new.rand(0...@pairs.count)]
     end

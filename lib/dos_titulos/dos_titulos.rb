@@ -5,6 +5,11 @@ module DosTitulos
   class DosTitulos
     # Toma un feed y un tópico y modifica al título
     # obtenido del feed con dicho tópico.
+    #
+    # @param params [Hash]
+    # @option params [Feed] :feed
+    # @option params [Topics] :topic
+    # @return [String]
     def replace(params)
       title = params[:feed].title
       old_categories = categories_on_title(params[:feed])
@@ -22,7 +27,10 @@ module DosTitulos
       pair.categories.select { |c| pair.title.split.map(&:capitalize).join(' ').include?(c) }
     end
 
-    # Filtra los pares (titulo, topicos) que cumplan con categories_on_title.
+    # Filtra los pares (titulo, topicos) que cumplan con #categories_on_title.
+    #
+    # @param feed [Feed] el feed obtenido a partir de un portal.
+    # @return [(String, [String])]
     def titles_with_categories(feed)
       pairs = feed.pairs
       pairs.select { |p| categories_on_title(p).count.positive? }

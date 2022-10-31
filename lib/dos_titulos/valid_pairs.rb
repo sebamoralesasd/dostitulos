@@ -9,6 +9,7 @@ module DosTitulos
       @pairs = params
     end
 
+    # Obtener un par válidado aleatorio.
     def get
       @pairs[Random.new.rand(0...@pairs.count)]
     end

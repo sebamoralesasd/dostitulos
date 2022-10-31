@@ -12,6 +12,7 @@ require_relative 'dos_titulos'
 module DosTitulos
   # Ejecución principal.
   class Main
+    # Ejecución principal.
     def main
       topics = Topics.new('https://trends.google.com.ar/trends/trendingsearches/daily/rss?geo=AR')
       elpais = Feed.new('https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/america/portada')
