@@ -18,7 +18,6 @@ module DosTitulos
         feed = RSS::Parser.parse(rss)
         feed.items.each do |item|
           title = item.title
-          # puts item.categories
           categories = item.categories.map(&:content)
           @pairs << OpenStruct.new(title: title, categories: categories)
         end
