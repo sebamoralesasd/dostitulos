@@ -9,7 +9,7 @@ COPY Gemfile* $APP_ROOT/
 # Install any needed gems specified in Gemfile
 RUN bundle install
 
-RUN ls -lh
+RUN ls -lh /
 # Copy the current directory contents into the container at /app
 COPY . $APP_ROOT
 
