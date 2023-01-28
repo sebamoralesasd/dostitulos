@@ -22,7 +22,6 @@ COPY . $APP_ROOT
 EXPOSE 4567
 
 #RUN ls -lh
-RUN docker ps
 RUN echo "The current working directory is $PWD" 
 
 # Run main.rb when the container launches
