@@ -9,10 +9,10 @@ COPY Gemfile* $APP_ROOT/
 # Install any needed gems specified in Gemfile
 RUN bundle install
 
+RUN ls -lh
 # Copy the current directory contents into the container at /app
 COPY . $APP_ROOT
 
-RUN ls -lh
 RUN echo "The current working directory is $PWD" 
 
 RUN whenever --update-crontab
