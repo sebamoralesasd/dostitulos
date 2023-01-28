@@ -9,4 +9,5 @@ gem 'open-uri'
 gem 'pry'
 gem 'rss'
 gem 'twitter'
+gem 'whenever', require: false
 gem 'yard'

@@ -8,6 +8,9 @@ COPY Gemfile* $APP_ROOT/
 
 # Install any needed gems specified in Gemfile
 RUN bundle install
+RUN bundle exec whenever
+RUN whenever --update-crontab
+RUN crontab -l
 
 # Copy the current directory contents into the container at /app
 COPY . $APP_ROOT
