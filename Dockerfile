@@ -18,8 +18,8 @@ RUN ls -lah
 # RUN whenever --update-crontab
 # RUN bundle exec whenever
 
-# Make port 3000 available to the world outside this container
-EXPOSE 3000
+# Make port 4567 available to the world outside this container
+EXPOSE 4567
 
 RUN ls -lh
 RUN echo "The current working directory is $PWD" 
