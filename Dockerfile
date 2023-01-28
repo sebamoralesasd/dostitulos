@@ -12,9 +12,7 @@ RUN bundle install
 # Copy the current directory contents into the container at /app
 COPY . $APP_ROOT
 
-RUN ls -lh
-RUN ls -lh lib/
-RUN ls -lh ..
+RUN ls -lah
 
 RUN whenever --update-crontab
 RUN bundle exec whenever
