@@ -15,5 +15,7 @@ COPY . $APP_ROOT
 # Make port 3000 available to the world outside this container
 EXPOSE 3000
 
+RUN echo "The current working directory is $PWD" 
+
 # Run main.rb when the container launches
 CMD ["ruby", "dos_titulos/main.rb"]
