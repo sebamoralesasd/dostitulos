@@ -18,6 +18,6 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.minute do
+every 3.minutes do
   command 'ruby /app/lib/dos_titulos/main.rb'
 end
