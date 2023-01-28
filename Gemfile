@@ -12,5 +12,4 @@ gem 'puma'
 gem 'rss'
 gem 'sinatra'
 gem 'twitter'
-gem 'whenever', require: false
 gem 'yard'
