@@ -14,9 +14,9 @@ COPY . $APP_ROOT
 
 RUN ls -lah
 
-RUN crontab -l
-RUN whenever --update-crontab
-RUN bundle exec whenever
+# RUN crontab -l
+# RUN whenever --update-crontab
+# RUN bundle exec whenever
 
 # Make port 3000 available to the world outside this container
 EXPOSE 3000
@@ -25,4 +25,4 @@ RUN ls -lh
 RUN echo "The current working directory is $PWD" 
 
 # Run main.rb when the container launches
-CMD ["ruby", "lib/dos_titulos/main.rb"]
+CMD ["ruby", "lib/app.rb"]
