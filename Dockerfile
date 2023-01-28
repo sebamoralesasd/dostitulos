@@ -12,6 +12,9 @@ RUN bundle install
 # Copy the current directory contents into the container at /app
 COPY . $APP_ROOT
 
+RUN ls -lh
+RUN echo "The current working directory is $PWD" 
+
 RUN whenever --update-crontab
 RUN bundle exec whenever
 RUN crontab -l
