@@ -13,7 +13,7 @@ module DosTitulos
     def replace(params)
       title = params[:feed].title
       old_categories = categories_on_title(params[:feed])
-      puts old_categories
+      # puts old_categories
       cat = old_categories[Random.new.rand(0..old_categories.count - 1)]
       topic = params[:topic]
 

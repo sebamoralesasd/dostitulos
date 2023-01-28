@@ -8,10 +8,18 @@ require_relative 'valid_pairs'
 require_relative 'topics'
 require_relative 'feed'
 require_relative 'dos_titulos'
+require_relative 'twitter_client'
 
 module DosTitulos
   # Ejecución principal.
   class Main
+    # Ejecución principal.
+    def main
+      client.update(dos_titulos)
+    end
+
+    private
+
     # Generar el título alterado.
     def dos_titulos
       topics = Topics.new('https://trends.google.com.ar/trends/trendingsearches/daily/rss?geo=AR')
@@ -21,11 +29,6 @@ module DosTitulos
       valid_pairs = ValidPairs.new(generator.titles_with_categories(elpais))
 
       generator.replace(feed: valid_pairs.get, topic: topics.get)
-    end
-
-    # Ejecución principal.
-    def main
-      puts dos_titulos
     end
   end
 end
