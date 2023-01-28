@@ -1,0 +1,8 @@
+version: 1
+
+services:
+  web:
+    build: .
+    command: ruby main.rb
+    ports:
+      - "3000:3000"
