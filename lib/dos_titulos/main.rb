@@ -28,7 +28,8 @@ module DosTitulos
       generator = DosTitulos.new
       valid_pairs = ValidPairs.new(generator.titles_with_categories(elpais))
 
-      generator.replace(feed: valid_pairs.get, topic: topics.get)
+      str = generator.replace(feed: valid_pairs.get, topic: topics.get)
+      str.tap! { |s| puts s }
     end
   end
 end
